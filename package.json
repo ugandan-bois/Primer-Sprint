@@ -1,0 +1,25 @@
+{
+  "name": "primer-sprint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/app.js -e js,hbs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugandan-bois/Primer-Sprint.git"
+  },
+  "author": "Ugandan Bois",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ugandan-bois/Primer-Sprint/issues"
+  },
+  "homepage": "https://github.com/ugandan-bois/Primer-Sprint#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "nodemon": "^1.18.10"
+  }
+}
