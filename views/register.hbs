@@ -1,3 +1,30 @@
 {{#> page_wrapper }}
     <h2>Registro de usuarios</h2>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="firstName" type="text" class="validate">
+                    <label for="firstName">Nombre completo</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="idNumber" type="text" class="validate">
+                    <label for="idNumber">Número de cédula</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Correo electrónico</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="phoneNumber" type="text" class="validate">
+                    <label for="phoneNumber">Teléfono</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
 {{/ page_wrapper }}
