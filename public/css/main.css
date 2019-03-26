@@ -1,4 +1,4 @@
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -36,4 +36,13 @@ body, html {
 
 .main {
     padding: 1em;
+} */
+
+.brand-logo {
+    height: 100%;
+    margin-left: 1em;
+}
+
+.brand-logo img {
+    height: 100%;
 }
