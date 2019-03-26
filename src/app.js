@@ -4,7 +4,7 @@ const hbs = require('hbs')
 
 const app = express()
 const publicsDIr = path.join(__dirname, '../public')
-const partialsDir = path.join(__dirname, '../partials')
+const partialsDir = path.join(__dirname, '../views/partials')
 const nodeModulesDir = path.join(__dirname, '../node_modules')
 
 app.use(express.static(publicsDIr))
