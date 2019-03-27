@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/ugandan-bois/Primer-Sprint#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "hbs": "^4.0.3",
+    "html-parse-stringify": "^1.0.3",
     "materialize-css": "^1.0.0-rc.2",
+    "morgan": "^1.9.1",
     "nodemon": "^1.18.10"
   }
 }

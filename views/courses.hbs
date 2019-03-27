@@ -1,3 +1,52 @@
 {{#> page_wrapper }}
-    <h2>Listado de cursos</h2>
-{{/ page_wrapper }}
+  <h2>Listado de cursos</h2>
+
+
+  <h4>Agregar Curso</h4>
+  <div class="row">
+    <form class="col s12" action="/api/pruebas" method="GET">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="id" type="text" class="validate" required>
+          <label for="id">Id</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="Name" type="text" class="validate" required>
+          <label for="Name">Nombre del curso</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="Modality" type="text" class="validate" required>
+          <label for="Modality">Modalidad</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="Intensity" type="text" class="validate" required>
+          <label for="Intensity">Intensidad horaria</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="price" type="text" class="validate" required>
+          <label for="price">Valor</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="Description" type="text" class="validate materialize-textarea" required>
+          <label for="Description">Descripción</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Enviar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+
+  </div>
+
+  <hr>
+
+  <h4>Cursos</h4>
+
+      {{{listar}}}
+
+
+  {{/ page_wrapper }}

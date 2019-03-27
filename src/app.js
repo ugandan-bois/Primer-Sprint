@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const morgan = require('morgan')
+const bodyParser = require('body-parser')
 
 const app = express()
 const publicsDIr = path.join(__dirname, '../public')
@@ -10,7 +12,11 @@ const nodeModulesDir = path.join(__dirname, '../node_modules')
 const viewsRoutes = require('./routes/views')
 const userRoutes = require('./routes/user')
 
+require('./helpers')
+
 app.use(express.static(publicsDIr))
+app.use(morgan('dev'))
+
 app.set('view engine', 'hbs')
 hbs.registerPartials(partialsDir)
 
