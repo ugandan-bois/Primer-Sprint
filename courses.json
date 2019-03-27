@@ -2,15 +2,27 @@
     "courses": [
         {
             "id": 1,
-            "name": "GraphQL",
-            "cost": 12000,
-            "duration": 36
+            "name": "Matemáticas",
+            "mode": "-",
+            "intensity": 32,
+            "price": 100,
+            "description": "Buena"
         },
         {
             "id": 2,
-            "name": "React Native",
-            "cost": 30000,
-            "duration": 12
+            "name": "Matemáticas 2",
+            "mode": "-",
+            "intensity": 32,
+            "price": 100,
+            "description": "Buena"
+        },
+        {
+            "id": 3,
+            "name": "Matemáticas 3",
+            "mode": "-",
+            "intensity": 32,
+            "price": 100,
+            "description": "Buena"
         }
     ]
 }

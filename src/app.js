@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const users = require('../users.json')
 
 const app = express()
 const publicsDir = path.join(__dirname, '../public')
@@ -12,6 +12,8 @@ const nodeModulesDir = path.join(__dirname, '../node_modules')
 const viewsRoutes = require('./routes/views')
 const usersRoutes = require('./routes/users')
 const coursesRoutes = require('./routes/courses')
+
+app.use(morgan('dev'))
 
 app.use(express.static(publicsDir))
 app.set('view engine', 'hbs')
