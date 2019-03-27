@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const bodyParser = require('body-parser')
+const users = require('../users.json')
 
 const app = express()
 const publicsDIr = path.join(__dirname, '../public')
@@ -17,11 +19,14 @@ hbs.registerPartials(partialsDir)
 
 app.use('/css/materialize', express.static(nodeModulesDir + '/materialize-css/dist/css/materialize.min.css'))
 app.use('/js/materialize', express.static(nodeModulesDir + '/materialize-css/dist/js/materialize.min.js'))
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/', viewsRoutes)
 app.use('/api', usersRoutes)
 app.use('/api', coursesRoutes)
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
     console.log('Listening on port 3000')
 });
