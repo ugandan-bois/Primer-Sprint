@@ -13,8 +13,6 @@ const viewsRoutes = require('./routes/views')
 const usersRoutes = require('./routes/users')
 const coursesRoutes = require('./routes/courses')
 
-require('./helpers')
-
 app.use(morgan('dev'))
 
 app.use(express.static(publicsDir))

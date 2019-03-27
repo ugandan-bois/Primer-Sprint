@@ -5,7 +5,8 @@
   "main": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/app.js -e js,hbs"
+    "start": "node ./src/app.js -e js,hbs",
+    "start:dev": "nodemon ./src/app.js -e js,hbs"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,6 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "hbs": "^4.0.3",
-    "html-parse-stringify": "^1.0.3",
     "materialize-css": "^1.0.0-rc.2",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10"
