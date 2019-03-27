@@ -4,16 +4,16 @@
             <h4 class="center-align">Bienvienido, para ver la lista de cursos e inscribirse debe iniciar sesión en la plataforma</h4>
         </div>
         <div class="row">
-            <form class="col s6 offset-s3">
+            <form class="col s6 offset-s3" method="POST" action="api/login">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="idNumber" type="text" class="validate" required>
+                        <input name="idNumber" id="idNumber" type="text" class="validate" required>
                         <label for="idNumber">Documento de identidad</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate" required>
+                        <input name="password" id="password" type="password" class="validate" required>
                         <label for="password">Contraseña</label>
                     </div>
                 </div>
@@ -28,4 +28,15 @@
             </form>
         </div>
     </div>
+
+    {{#if errorMessage}}
+        <script>
+            window.onload = () => {
+                M.toast({
+                    html: '<i class="material-icons right">error</i> {{ errorMessage }}',
+                    classes: "red text-white"                    
+                })
+            }
+        </script>    
+    {{/if}}
 {{/ page_wrapper }}
