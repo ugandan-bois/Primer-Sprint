@@ -8,7 +8,8 @@ const partialsDir = path.join(__dirname, '../views/partials')
 const nodeModulesDir = path.join(__dirname, '../node_modules')
 
 const viewsRoutes = require('./routes/views')
-const userRoutes = require('./routes/user')
+const usersRoutes = require('./routes/users')
+const coursesRoutes = require('./routes/courses')
 
 app.use(express.static(publicsDIr))
 app.set('view engine', 'hbs')
@@ -18,7 +19,8 @@ app.use('/css/materialize', express.static(nodeModulesDir + '/materialize-css/di
 app.use('/js/materialize', express.static(nodeModulesDir + '/materialize-css/dist/js/materialize.min.js'))
 
 app.use('/', viewsRoutes)
-app.use('/api', userRoutes)
+app.use('/api', usersRoutes)
+app.use('/api', coursesRoutes)
 
 app.listen(3000, () => {
     console.log('Listening on port 3000')
