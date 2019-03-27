@@ -5,4 +5,4 @@ const api = express.Router()
 
 api.get('/pruebas', UsersController.pruebas)
 
-module.exports = api;
+module.exports = api
