@@ -1,0 +1,23 @@
+[{
+  "id": 1,
+  "nombre": "Matemáticas",
+  "modalidad": "-",
+  "intensidad": "32 h",
+  "valor": "$100",
+  "descripcion": "Buena"
+},{
+  "id": 2,
+  "nombre": "Matemáticas 2",
+  "modalidad": "-",
+  "intensidad": "32 h",
+  "valor": "$100",
+  "descripcion": "Buena"
+},
+{
+  "id": 3,
+  "nombre": "Matemáticas 3",
+  "modalidad": "-",
+  "intensidad": "32 h",
+  "valor": "$100",
+  "descripcion": "Buena"
+}]
