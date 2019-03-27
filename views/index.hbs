@@ -4,7 +4,7 @@
             <h4 class="center-align">Bienvienido, para ver la lista de cursos e inscribirse debe iniciar sesión en la plataforma</h4>
         </div>
         <div class="row">
-            <form class="col s6 offset-s3" method="POST" action="api/login">
+            <form class="col s6 offset-s3" method="POST" onsubmit="onLoginUser()">
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="idNumber" id="idNumber" type="text" class="validate" required>
