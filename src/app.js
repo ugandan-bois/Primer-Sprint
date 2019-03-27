@@ -15,6 +15,7 @@ const userRoutes = require('./routes/user')
 require('./helpers')
 
 app.use(express.static(publicsDIr))
+
 app.use(morgan('dev'))
 
 app.set('view engine', 'hbs')
