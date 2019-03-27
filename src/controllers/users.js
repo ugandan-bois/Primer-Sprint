@@ -1,7 +1,7 @@
-function pruebas(req, res){
+const pruebas = (req, res) => {
     res.status(200).send({
         message: 'pruebas'
-    });
+    })
 }
 
 module.exports = {
