@@ -20,7 +20,10 @@ class RegisterCourse {
 
         fetch('/api/course/register', {
             method: 'POST',
-            body: JSON.stringify({"Hola": "hola"})
+            body: JSON.stringify({"Hola": "hola"}),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         })
         .then(res => console.log(res.json()))
     }
