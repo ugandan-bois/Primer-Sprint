@@ -1,4 +1,5 @@
-# Primer Sprint
+# Primer Sprint [![Build Status](https://travis-ci.org/ugandan-bois/Primer-Sprint.svg?branch=master)](https://travis-ci.org/ugandan-bois/Primer-Sprint)
+
 Este es el repositorio para la entrega del primer sprint para el curso **Introducción a NodeJS mediante el desarrollo
 de un proyecto agil**. Para correr el proyecto debe:
 
