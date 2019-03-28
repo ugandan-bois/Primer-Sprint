@@ -8,6 +8,7 @@ const app = express()
 const publicsDir = path.join(__dirname, '../public')
 const partialsDir = path.join(__dirname, '../views/partials')
 const nodeModulesDir = path.join(__dirname, '../node_modules')
+const jsDir = path.join(__dirname, './js')
 
 const viewsRoutes = require('./routes/views')
 const usersRoutes = require('./routes/users')
@@ -21,7 +22,9 @@ hbs.registerPartials(partialsDir)
 
 app.use('/css/materialize', express.static(nodeModulesDir + '/materialize-css/dist/css/materialize.min.css'))
 app.use('/js/materialize', express.static(nodeModulesDir + '/materialize-css/dist/js/materialize.min.js'))
-app.use(bodyParser.urlencoded({extended: false}))
+app.use('/js/index', express.static(jsDir + '/index.js'))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 app.use('/', viewsRoutes)
 app.use('/api', usersRoutes)
