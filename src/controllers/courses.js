@@ -9,7 +9,6 @@ const createCourse = (req, res) => {
     const params = req.body
     if (!courses.find(course => course.id == params.id)) {
         courses.push(params)
-        console.log(JSON.stringify({courses: courses}))
         fs.writeFile('courses.json', JSON.stringify({courses: courses}), (err) => {
             if (err) throw err
             res.status(200).send(params)
