@@ -6,17 +6,15 @@ const getCourses = (req, res) => {
 }
 
 const createCourse = (req, res) => {
-    const params = req.body
-    params.state = true
-    params.enrollments = []
+    const newCourse = { ...req.body, state: true, enrollments: []}
 
     const courses = coursesService.getCourses()
 
-    if (!courses.find(course => course.id == params.id)) {
-        const result = coursesService.createCourse(params)
+    if (!courses.find(course => course.id == newCourse.id)) {
+        const result = coursesService.createCourse(newCourse)
         result ?
             res.status(200).send({
-                params: params,
+                params: newCourse,
                 success: true
             }) :
             res.status(500).send({
