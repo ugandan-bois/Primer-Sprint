@@ -22,14 +22,18 @@ app.get('/', authMiddleware, (req, res) => {
     res.render('welcome', {isLoggedIn: req.session.isLoggedIn})
 })
 app.get('/courses', (req, res) => {
-    res.render('courses', { courses: courses.courses, isLoggedIn: req.session.isLoggedIn})
+    res.render('courses', { courses, isLoggedIn: req.session.isLoggedIn})
 })
 app.get('/register', (req, res) => {
     res.render('register')
 })
 
 app.get('/enrollments', (req, res) => {
-    res.render('enrollments', { courses: courses.courses })
+    res.render('enrollments', { courses })
+})
+
+app.get('/registercourse', (req, res) => {
+    res.render('registerCourse', {isLoggedIn: req.session.isLoggedIn})
 })
 
 app.get('/login', (req, res) => {

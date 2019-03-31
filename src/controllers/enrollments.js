@@ -12,7 +12,7 @@ const createEnrollment = (req, res) => {
     if (!curso.enrollments.find(e => e.id == params.id)) {
         curso.enrollments.push(params);
         console.log(curso)
-        fs.writeFile('courses.json', JSON.stringify({courses: courses}), (err) => {
+        fs.writeFile('courses.json', JSON.stringify(courses), (err) => {
             if (err) throw err
             res.status(200).send(params)
         })

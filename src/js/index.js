@@ -7,6 +7,7 @@ import RegisterEnrollment from './components/registerEnrollment'
 const registerCourse = new RegisterCourse();
 const updateCourseState = new UpdateCourseState();
 const registerEnrollment = new RegisterEnrollment();
+const registerUser = new RegisterUser()
 
 var elem = document.querySelector('.collapsible');
 var instance = new M.Collapsible(elem, {

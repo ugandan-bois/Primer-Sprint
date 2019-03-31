@@ -1,6 +1,8 @@
-[
-  {
-    "id": "admin",
-    "password": "admin123"
-  }
-]
+[{
+    "idNumber": "0000",
+    "fullName": "Admin User",
+    "password": "admin123",
+    "email": "admin@ub.com",
+    "phoneNumber": "123456789",
+    "role": "Coordinador"
+}]
