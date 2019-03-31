@@ -19,9 +19,11 @@ app.get('/', authMiddleware, (req, res) => {
 
 app.get('/courses', authMiddleware, (req, res) => {
     const courses = coursesService.getCourses()
+    const isAdmin = req.session.user.role == 'Coordinador' ? true : false
     res.render('courses', {
       courses,
-      isLoggedIn: req.session.isLoggedIn
+      isLoggedIn: req.session.isLoggedIn,
+      isAdmin: isAdmin
     }
   )
 })
