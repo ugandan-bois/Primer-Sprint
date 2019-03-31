@@ -33,11 +33,9 @@ const create = (req, res) => {
 }
 
 const loginSuccessful = (data) => {
-    if (users.find((user) => user.id === data.idNumber && user.password === data.password)) {
-        return true
-    }
+  const user = users.find((user) => user.idNumber === data.idNumber && user.password === data.password)
 
-    return false
+  return user || false
 }
 
 module.exports = {
