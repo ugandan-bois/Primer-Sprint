@@ -1,8 +1,8 @@
 const express = require('express')
 const session = require('express-session')
+const { loginSuccessful } = require('../controllers/users')
+const { authMiddleware } = require('./middlewares')
 
-const coursesService = require('../services/coursesService')
-const {loginSuccessful} = require('../controllers/users')
 
 const app = express()
 app.use(session({
@@ -11,24 +11,22 @@ app.use(session({
     saveUninitialized: true
 }))
 
-const authMiddleware = (req, res, next) => {
-    if (req.session && req.session.isLoggedIn) {
-        return next()
-    } else {
-        res.redirect('/login')
-    }
-}
-
 app.get('/', authMiddleware, (req, res) => {
-    res.render('welcome', {isLoggedIn: req.session.isLoggedIn})
+    res.render('welcome', {isLoggedIn: req.session.isLoggedIn, user: req.session.user})
 })
-app.get('/courses', (req, res) => {
-    const courses = coursesService.getCourses()
-    res.render('courses', { courses, isLoggedIn: req.session.isLoggedIn})
+
+app.get('/courses', authMiddleware, (req, res) => {
+    res.render('courses', {
+      courses,
+      isLoggedIn: req.session.isLoggedIn
+    }
+  )
 })
+
 app.get('/register', (req, res) => {
     res.render('register')
 })
+
 app.get('/registercourse', (req, res) => {
     res.render('registerCourse', {isLoggedIn: req.session.isLoggedIn})
 })
@@ -36,8 +34,10 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 app.post('/login', (req, res) => {
-    if (loginSuccessful(req.body)) {
+    const user = loginSuccessful(req.body)
+    if (user) {
         req.session.isLoggedIn = true
+        req.session.user = user
         res.redirect('/')
     } else {
         res.redirect('/login')
