@@ -5,7 +5,7 @@ class RegisterCourse {
     }
 
     events() {
-        this.registerButton.addEventListener('click', this.register)
+        this.registerButton && this.registerButton.addEventListener('click', this.register)
     }
 
     register() {

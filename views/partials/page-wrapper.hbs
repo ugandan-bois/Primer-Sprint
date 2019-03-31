@@ -19,6 +19,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/courses">Cursos</a></li>
                     <li><a href="/register">Registro</a></li>
+                    {{#if isLoggedIn}}<li><a href="/logout">Cerrar Sesión</a></li>{{/if}}
                 </ul>
             </div>
         </nav>
