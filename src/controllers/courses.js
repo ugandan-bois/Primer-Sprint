@@ -1,4 +1,4 @@
-const { courses } = require('../../courses.json')
+const courses = require('../../courses.json')
 const fs = require('fs')
 
 const getCourses = (req, res) => {
@@ -9,12 +9,12 @@ const createCourse = (req, res) => {
     const params = req.body
     if (!courses.find(course => course.id == params.id)) {
         courses.push(params)
-        fs.writeFile('courses.json', JSON.stringify({courses: courses}), (err) => {
+        fs.writeFile('courses.json', JSON.stringify(courses), (err) => {
             if (err) throw err
             res.status(200).send({params: params, success: true})
         })
     } else {
-        res.status(409).send({message: 'Id already exists', success: false})
+        res.status(409).send({message: 'Ya existe un curso con este id', success: false})
     }
 }
 

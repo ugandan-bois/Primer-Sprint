@@ -15,7 +15,7 @@ class RegisterCourse {
     }
 
     register(e) {
-        // e.preventDefault()
+        e.preventDefault()
         const form = document.getElementById('courseForm')
         const id = document.getElementById('id').value
         const name = document.getElementById('name').value
@@ -26,7 +26,8 @@ class RegisterCourse {
 
         const requestBody = { id, name, mode, intensity, price, description }
 
-        if( id != "" && name != "" && mode != "" && intensity != "" && price != "" && description != ""){
+        const validForm = form.checkValidity()
+        if(validForm){
             fetch('/api/course/register', {
                 method: 'POST',
                 body: JSON.stringify(requestBody),
@@ -36,9 +37,12 @@ class RegisterCourse {
             })
             .then((res) => {
                 if (res.status != 200) {
-                    M.toast({
-                        html: '<i class="material-icons right">error</i> Ya existe un curso con este id',
-                        classes: "red white-text"
+                    res.json()
+                    .then(body => {
+                        M.toast({
+                            html: `<i class="material-icons right">error</i> ${body.message}`,
+                            classes: "red white-text"
+                        })
                     })
                 } else {
                     M.toast({
