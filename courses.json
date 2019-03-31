@@ -1,49 +1,19 @@
 [{
-  "id": 1,
-  "name": "Matemáticas",
-  "mode": "-",
-  "intensity": 32,
-  "price": 100,
-  "description": "Buena",
-  "state": "Disponible"
+  "id": "1",
+  "name": "Node JS",
+  "mode": "",
+  "intensity": "",
+  "price": "140000",
+  "description": "Introducción a Node JS",
+  "state": "Disponible",
+  "enrollments": []
 }, {
-  "id": 2,
-  "name": "Matemáticas 2",
-  "mode": "-",
-  "intensity": 32,
-  "price": 100,
-  "description": "Buena",
-  "state": "Disponible"
-}, {
-  "id": 3,
-  "name": "Matemáticas 3",
-  "mode": "-",
-  "intensity": 32,
-  "price": 100,
-  "description": "Buena",
-  "state": "Disponible"
-}, {
-  "id": "4",
-  "name": "Malabares",
-  "modality": {},
-  "intensity": "30",
-  "price": "120000",
-  "description": "Cursos emocionante y divertido",
-  "state": "Disponible"
-}, {
-  "id": "5",
-  "name": "Cocina",
-  "modality": {},
-  "intensity": "30",
-  "price": "120000",
-  "description": "Emoción pura",
-  "state": "Disponible"
-}, {
-  "id": "14",
-  "name": "Cajón peruano para dummies",
+  "id": "2",
+  "name": "Cajón peruano",
   "mode": "Presencial",
-  "intensity": "120",
-  "price": "2500000",
-  "description": "Conviértete en un crack de la percusión ",
-  "state": "Disponible"
+  "intensity": "35",
+  "price": "1500000",
+  "description": "Discutiblemente el mejor instrumento",
+  "state": "Disponible",
+  "enrollments": []
 }]

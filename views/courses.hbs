@@ -10,6 +10,7 @@
       <th>Intensidad horaria</th>
       <th>Valor</th>
       <th>Descripción</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,13 @@
         <td>{{this.intensity}} hr</td>
         <td>${{this.price}}</td>
         <td>{{this.description}}</td>
+        <td>
+          {{#if ../isAdmin}}
+            <a class="waves-effect waves-light btn-flat tooltipped" data-position="top" data-tooltip="Ver aspirantes matriculados" href="/courses/{{this.id}}/enrolled"><i class="material-icons left">people</i></a>
+          {{else}}
+            <a class="waves-effect waves-light btn-flat tooltipped" data-position="top" data-tooltip="Matricularme en este curso" href="/courses"><i class="material-icons left">edit</i></a>
+          {{/if}}
+        </td>
       </tr>
     {{/each}}
   </tbody>
@@ -73,5 +81,10 @@
       {{/ifEquals}}
     {{/each}}
 </ul>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped')
+    var instances = M.Tooltip.init(elems)
+  })
+</script>
 {{/ page_wrapper }}
