@@ -1,29 +1,124 @@
 {{#> page_wrapper }}
-<h2>Listado de cursos</h2>
+  <h2>Listado de cursos</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nombre</th>
-      <th>Modalidad</th>
-      <th>Intensidad horaria</th>
-      <th>Valor</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each courses}}
+  <h4>Agregar Curso</h4>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="id" type="text" class="validate" required>
+          <label for="id">Id</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="name" type="text" class="validate" required>
+          <label for="name">Nombre del curso</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select id="modality" required>
+            <option value="presencial">Presencial</option>
+            <option value="virtual">Virtual</option>
+          </select>
+          <label for="modality">Modalidad</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="intensity" type="text" class="validate" required>
+          <label for="intensity">Intensidad horaria</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="price" type="text" class="validate" required>
+          <label for="price">Valor</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="description" type="text" class="validate materialize-textarea" required>
+          <label for="description">Descripción</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" id="submitCourseRegistration">Enviar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+
+  </div>
+
+  <hr>
+
+  <h4>Cursos</h4>
+
+  <table>
+    <thead>
       <tr>
-        <td>{{this.id}}</td>
-        <td>{{this.name}}</td>
-        <td>{{this.mode}}</td>
-        <td>{{this.intensity}} hr</td>
-        <td>${{this.price}}</td>
-        <td>{{this.description}}</td>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Modalidad</th>
+        <th>Intensidad horaria</th>
+        <th>Valor</th>
+        <th>Descripción</th>
+        <th>Estado</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {{#each courses}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.mode}}</td>
+          <td>{{this.intensity}} hr</td>
+          <td>${{this.price}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.state}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 
-{{/ page_wrapper }}
+  <h4>Ver cursos como interesado <span class="new badge blue">disponibles</span></h4>
+
+  <ul class="collapsible">
+    {{#each courses}}
+      {{#ifEquals this.state "Disponible"}}
+        <li>
+          <div class="collapsible-header"><i class="material-icons">event_available</i>
+            <p class="waves-effect btn secondary-content">{{this.name}}</p><br>
+            <span class="badge">con precio: ${{this.price}}</span>
+          </div>
+          <div class="collapsible-body">
+            <p> <b>Nombre Curso: </b> <span>{{this.name}}.</span></p><br>
+            <p> <b>Modalidad del curso: </b> <span>{{this.mode}}</span></p><br>
+            <p> <b>Intensidad horararia del curso: </b> <span>{{this.intensity}} horas</span></p><br>
+            <p> <b>Precio: </b> <span>$ {{this.price}}.</span></p><br>
+            <p> <b>Descripción: </b> <span>{{this.description}}.</span></p><br>
+            <p> <b>Estado: </b> <span>{{this.state}}.</span></p><br>
+          </div>
+        </li>
+      {{/ifEquals}}
+    {{/each}}
+  </ul>
+
+  <h4>Actualizar el estado de los cursos</h4>
+  <form>
+    <div class="row">
+      <div class="input-field col s6">
+        <select id="course" required>
+          {{#each courses}}
+            <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+        <label for="course">Curso</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select id="state" required>
+            <option value="Disponible">Disponible</option>
+            <option value="Cerrado">Cerrado</option>
+          </select>
+          <label for="state">Estado</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" id="submitCourseActualization">Actualizar
+          <i class="material-icons right">send</i>
+        </button>
+  </form>
+  {{/ page_wrapper }}
