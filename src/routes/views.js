@@ -1,5 +1,7 @@
 const express = require('express')
 const session = require('express-session')
+
+const coursesService = require('../services/coursesService')
 const { loginSuccessful } = require('../controllers/users')
 const { authMiddleware } = require('./middlewares')
 
@@ -16,6 +18,7 @@ app.get('/', authMiddleware, (req, res) => {
 })
 
 app.get('/courses', authMiddleware, (req, res) => {
+    const courses = coursesService.getCourses()
     res.render('courses', {
       courses,
       isLoggedIn: req.session.isLoggedIn
