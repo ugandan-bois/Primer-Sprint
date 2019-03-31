@@ -1,8 +1,8 @@
 const express = require('express')
-const courses = require('../../courses.json')
 const session = require('express-session')
 const { loginSuccessful } = require('../controllers/users')
 const { authMiddleware } = require('./middlewares')
+
 
 const app = express()
 app.use(session({
@@ -14,6 +14,7 @@ app.use(session({
 app.get('/', authMiddleware, (req, res) => {
     res.render('welcome', {isLoggedIn: req.session.isLoggedIn, user: req.session.user})
 })
+
 app.get('/courses', authMiddleware, (req, res) => {
     res.render('courses', {
       courses,
@@ -21,18 +22,17 @@ app.get('/courses', authMiddleware, (req, res) => {
     }
   )
 })
+
 app.get('/register', (req, res) => {
     res.render('register')
 })
 
-app.get('/registercourse', authMiddleware, (req, res) => {
+app.get('/registercourse', (req, res) => {
     res.render('registerCourse', {isLoggedIn: req.session.isLoggedIn})
 })
-
 app.get('/login', (req, res) => {
     res.render('login')
 })
-
 app.post('/login', (req, res) => {
     const user = loginSuccessful(req.body)
     if (user) {
@@ -43,7 +43,6 @@ app.post('/login', (req, res) => {
         res.redirect('/login')
     }
 })
-
 app.get('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/')
