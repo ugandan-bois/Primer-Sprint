@@ -7,6 +7,9 @@ const getCourses = (req, res) => {
 
 const createCourse = (req, res) => {
     const params = req.body
+    params.state = true
+    params.enrollments = []
+
     const courses = coursesService.getCourses()
 
     if (!courses.find(course => course.id == params.id)) {
