@@ -1,1 +1,43 @@
-{"courses":[{"id":1,"name":"Matemáticas","mode":"-","intensity":32,"price":100,"description":"Buena"},{"id":2,"name":"Matemáticas 2","mode":"-","intensity":32,"price":100,"description":"Buena"},{"id":3,"name":"Matemáticas 3","mode":"-","intensity":32,"price":100,"description":"Buena"},{"id":"4","name":"Malabares","modality":{},"intensity":"30","price":"120000","description":"Cursos emocionante y divertido"},{"id":"5","name":"Cocina","modality":{},"intensity":"30","price":"120000","description":"Emoción pura"}]}
+{
+  "courses": [{
+    "id": 1,
+    "name": "Matemáticas",
+    "mode": "-",
+    "intensity": 32,
+    "price": 100,
+    "description": "Buena",
+    "state": "Disponible"
+  }, {
+    "id": 2,
+    "name": "Matemáticas 2",
+    "mode": "-",
+    "intensity": 32,
+    "price": 100,
+    "description": "Buena",
+    "state": "Disponible"
+  }, {
+    "id": 3,
+    "name": "Matemáticas 3",
+    "mode": "-",
+    "intensity": 32,
+    "price": 100,
+    "description": "Buena",
+    "state": "Disponible"
+  }, {
+    "id": "4",
+    "name": "Malabares",
+    "modality": {},
+    "intensity": "30",
+    "price": "120000",
+    "description": "Cursos emocionante y divertido",
+    "state": "Disponible"
+  }, {
+    "id": "5",
+    "name": "Cocina",
+    "modality": {},
+    "intensity": "30",
+    "price": "120000",
+    "description": "Emoción pura",
+    "state": "Disponible"
+  }]
+}
