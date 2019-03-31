@@ -19,7 +19,19 @@ const createCourse = (req, res) => {
     }
 }
 
+const updateCourse = (req, res) => {
+    const params = req.body
+    let curso = courses.find(buscar => buscar.name == params.course)
+    curso['state'] = params.state
+    courses[params.course] = params.state;
+    fs.writeFile('courses.json', JSON.stringify({courses: courses}), (err) => {
+        if (err) throw err
+        res.status(200).send(params)
+    })
+}
+
 module.exports = {
     getCourses,
-    createCourse
+    createCourse,
+    updateCourse
 }

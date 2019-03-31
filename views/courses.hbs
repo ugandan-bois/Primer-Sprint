@@ -84,7 +84,7 @@
           <div class="collapsible-header"><i class="material-icons">event_available</i>
             <p class="waves-effect btn secondary-content">{{this.name}}</p><br>
             <span class="badge">con precio: ${{this.price}}</span>
-            </div>
+          </div>
           <div class="collapsible-body">
             <p> <b>Nombre Curso: </b> <span>{{this.name}}.</span></p><br>
             <p> <b>Modalidad del curso: </b> <span>{{this.mode}}</span></p><br>
@@ -98,5 +98,27 @@
     {{/each}}
   </ul>
 
-
+  <h4>Actualizar el estado de los cursos</h4>
+  <form>
+    <div class="row">
+      <div class="input-field col s6">
+        <select id="course" required>
+          {{#each courses}}
+            <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+        <label for="course">Curso</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select id="state" required>
+            <option value="Disponible">Disponible</option>
+            <option value="Cerrado">Cerrado</option>
+          </select>
+          <label for="state">Estado</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" id="submitCourseActualization">Actualizar
+          <i class="material-icons right">send</i>
+        </button>
+  </form>
   {{/ page_wrapper }}
