@@ -6,7 +6,7 @@ class RegisterUser {
     }
 
     events() {
-        this.registerButton.addEventListener('click', this.submitUser)
+        this.registerButton && this.registerButton.addEventListener('click', this.submitUser)
     }
 
     submitUser(e) {
