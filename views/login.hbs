@@ -1,10 +1,11 @@
-{{#> page_wrapper }}
+{{#> page_wrapper}}
     <div class="container">
         <div class="row">
-            <h4 class="center-align">Bienvienido, para ver la lista de cursos e inscribirse debe iniciar sesión en la plataforma</h4>
+            <h4 class="center-align">Bienvienido, para ver la lista de cursos e inscribirse debe iniciar sesión en la
+                plataforma</h4>
         </div>
         <div class="row">
-            <form class="col s6 offset-s3" method="POST" onsubmit="onLoginUser()">
+            <form class="col s6 offset-s3" action="/login" method="POST">
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="idNumber" id="idNumber" type="text" class="validate" required>
@@ -18,7 +19,7 @@
                     </div>
                 </div>
                 <div class="center-align">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                    <button id="submitUserLogin" class="btn waves-effect waves-light" type="submit">Enviar
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -28,15 +29,15 @@
             </form>
         </div>
     </div>
-
+    
     {{#if errorMessage}}
-        <script>
-            window.onload = () => {
-                M.toast({
-                    html: '<i class="material-icons right">error</i> {{ errorMessage }}',
-                    classes: "red text-white"                    
-                })
-            }
-        </script>    
+    <script>
+        window.onload = () => {
+            M.toast({
+                html: '<i class="material-icons right">error</i> {{ errorMessage }}',
+                classes: "red text-white"
+            })
+        }
+    </script>
     {{/if}}
-{{/ page_wrapper }}
+{{/ page_wrapper}}
