@@ -1,0 +1,25 @@
+{{#> page_wrapper }}
+<h1>{{course.name}}</h1>
+<h2>Usuarios inscritos</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre Completo</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each enrolledUsers}}
+      <tr>
+        <td>{{this.idNumber}}</td>
+        <td>{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.phoneNumber}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/ page_wrapper }}
