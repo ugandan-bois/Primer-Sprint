@@ -30,6 +30,7 @@ app.get('/register', (req, res) => {
 
 app.get('/enrollments', (req, res) => {
     res.render('enrollments', { courses: courses.courses })
+})
 
 app.get('/login', (req, res) => {
     res.render('login')
