@@ -11,10 +11,10 @@ const createCourse = (req, res) => {
         courses.push(params)
         fs.writeFile('courses.json', JSON.stringify({courses: courses}), (err) => {
             if (err) throw err
-            res.status(200).send(params)
+            res.status(200).send({params: params, success: true})
         })
     } else {
-        res.status(500).send({message: 'Id already exists'})
+        res.status(409).send({message: 'Id already exists', success: false})
     }
 }
 

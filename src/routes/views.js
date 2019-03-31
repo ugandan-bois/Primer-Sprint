@@ -28,6 +28,10 @@ app.get('/register', (req, res) => {
     res.render('register')
 })
 
+app.get('/registercourse', (req, res) => {
+    res.render('registerCourse', {isLoggedIn: req.session.isLoggedIn})
+})
+
 app.get('/login', (req, res) => {
     res.render('login')
 })
