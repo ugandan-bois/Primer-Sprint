@@ -9,7 +9,12 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <link rel="stylesheet" href="css/materialize" type="text/css">
-
+        <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+          });
+        </script>
     </head>
     <body>
         <nav>
@@ -20,6 +25,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/courses">Cursos</a></li>
                     <li><a href="/register">Registro</a></li>
+                    <li><a href="/enrollments">Inscripciones</a></li>
                 </ul>
             </div>
         </nav>

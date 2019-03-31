@@ -13,4 +13,7 @@ app.get('/register', (req, res) => {
     res.render('register')
 })
 
+app.get('/enrollments', (req, res) => {
+    res.render('enrollments', { courses: courses.courses })
+})
 module.exports = app
