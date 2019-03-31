@@ -9,3 +9,9 @@ var instance = new M.Collapsible(elem, {
   // inDuration: 1000,
   // outDuration: 1000
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems, {});
+});
