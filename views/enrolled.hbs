@@ -1,0 +1,33 @@
+{{#> page_wrapper }}
+<h1>{{course.name}}</h1>
+<h2>Usuarios inscritos</h2>
+
+{{#if enrolledUsers.length}}
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre Completo</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th><i class="material-icons">settings</i></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each enrolledUsers}}
+      <tr>
+        <td>{{this.idNumber}}</td>
+        <td>{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.phoneNumber}}</td>
+        <td>
+            <button data-course-id="{{../course.id}}" data-user-id="{{this.idNumber}}" class="ub-btnRemoveUser waves-effect waves-light btn-small btn-floating grey"><i class="material-icons">delete</i></button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<span>No hay ningún aspirante inscrito en este curso.</span>
+{{/if}}
+{{/ page_wrapper }}

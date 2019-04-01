@@ -7,22 +7,22 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Educación continua</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <link rel="stylesheet" href="css/materialize" type="text/css">
+        <link rel="stylesheet" href="/css/main.css" type="text/css">
+        <link rel="stylesheet" href="/css/materialize" type="text/css">
         <script type="text/javascript">
           document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(elems, {});
-            var elem = document.querySelector('.collapsible');
-            var instance = new M.Collapsible(elem, {});
-          });
+            const elems = document.querySelectorAll('select')
+            elems && M.FormSelect.init(elems, {})
+            const elem = document.querySelector('.collapsible')
+            elem && new M.Collapsible(elem, {})
+          })
         </script>
     </head>
     <body>
         <nav>
           <div class="nav-wrapper black">
               <a href="/" class="brand-logo">
-                  <img src="img/knuckles.png" alt="">
+                  <img src="/img/knuckles.png" alt="">
               </a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                   {{#if isLoggedIn}}
