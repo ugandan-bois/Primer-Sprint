@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "webpack & node ./src/app.js -e js,hbs",
-    "start:dev": "webpack & nodemon ./src/app.js -e js,hbs"
+    "start:dev": "webpack & nodemon ./src/app.js -e js,hbs",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
