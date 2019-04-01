@@ -1,16 +1,20 @@
-const { courses } = require('../../courses.json')
+const coursesService = require('../services/coursesService')
 const fs = require('fs')
 
+
 const getEnrollments = (req, res) => {
+    const courses = coursesService.getCourses()
     res.status(200).send(courses)
 }
 
 const createEnrollment = (req, res) => {
     const params = req.body
+    const courses = coursesService.getCourses()
     let curso = courses.find(buscar => buscar.name == params.course)
-
+    console.log(req.body)
+    console.log(curso)
     if (!curso.enrollments.find(e => e.id == params.id)) {
-        curso.enrollments.push(params);
+        curso.enrollments.push(params.id);
         console.log(curso)
         fs.writeFile('courses.json', JSON.stringify(courses), (err) => {
             if (err) throw err

@@ -53,4 +53,15 @@ app.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
+app.get('/enrollments', authMiddleware, (req, res) => {
+    const courses = coursesService.getCourses()
+    const isAdmin = req.session.user.role == 'Coordinador' ? true : false
+    res.render('enrollments', {
+      courses,
+      isLoggedIn: req.session.isLoggedIn,
+      isAdmin: isAdmin
+    }
+  )
+})
+
 module.exports = app
