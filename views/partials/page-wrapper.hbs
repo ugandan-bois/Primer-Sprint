@@ -9,6 +9,14 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css" type="text/css">
         <link rel="stylesheet" href="/css/materialize" type="text/css">
+        <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+            var elem = document.querySelector('.collapsible');
+            var instance = new M.Collapsible(elem, {});
+          });
+        </script>
     </head>
     <body>
         <nav>
