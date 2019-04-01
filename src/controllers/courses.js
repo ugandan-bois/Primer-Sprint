@@ -7,7 +7,6 @@ const getCourses = (req, res) => {
 
 const createCourse = (req, res) => {
     const newCourse = { ...req.body, state: "Disponible", enrollments: []}
-
     const courses = coursesService.getCourses()
 
     if (!courses.find(course => course.id == newCourse.id)) {
@@ -44,15 +43,18 @@ const unenrollUser = (req, res) => {
 }
 
 const updateCourse = (req, res) => {
-    const params = req.body
-    const courses = coursesService.getCourses()
-    let curso = courses.find(buscar => buscar.name == params.course)
-    curso.state = params.state
-    courses[params.course] = params.state;
-    const result = coursesService.updateCourseState(courses)
+    const { course, state } = req.body
+    if (!course || !state) {
+        res.status(400).send({
+            message: 'Faltan parámetros requeridos',
+            success: false
+        })
+    }
+
+    const result = coursesService.updateCourseState(course, state)
     result ?
         res.status(200).send({
-            params: curso,
+            params: 'Estado del curso actualizado correctamente',
             success: true
         }) :
         res.status(500).send({
