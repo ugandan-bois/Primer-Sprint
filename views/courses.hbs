@@ -24,9 +24,9 @@
         <td>{{this.description}}</td>
         <td>
           {{#if ../isAdmin}}
-            <a class="waves-effect waves-light btn-flat tooltipped" data-position="top" data-tooltip="Ver aspirantes matriculados" href="/courses/{{this.id}}/enrolled"><i class="material-icons left">people</i></a>
+            <a class="waves-effect waves-light btn-small btn-floating grey tooltipped" data-position="top" data-tooltip="Ver aspirantes matriculados" href="/courses/{{this.id}}/enrolled"><i class="material-icons">people</i></a>
           {{else}}
-            <a class="waves-effect waves-light btn-flat tooltipped" data-position="top" data-tooltip="Matricularme en este curso" href="/courses"><i class="material-icons left">edit</i></a>
+            <a class="waves-effect waves-light btn-small btn-floating grey tooltipped" data-position="top" data-tooltip="Matricularme en este curso" href="/courses"><i class="material-icons">edit</i></a>
           {{/if}}
         </td>
       </tr>

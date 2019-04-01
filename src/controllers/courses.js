@@ -29,7 +29,22 @@ const createCourse = (req, res) => {
     }
 }
 
+const unenrollUser = (req, res) => {
+    const { courseId, userId } = req.params
+    const result = coursesService.removeEnrolledUser(courseId, userId)
+        result ?
+            res.status(200).send({
+                message: 'Aspirante eliminado exitosamente',
+                success: true
+            }) :
+            res.status(500).send({
+                message: 'Error inesperado eliminando aspirante',
+                success: false
+            })
+}
+
 module.exports = {
     getCourses,
-    createCourse
+    createCourse,
+    unenrollUser
 }
