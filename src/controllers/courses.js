@@ -6,7 +6,7 @@ const getCourses = (req, res) => {
 }
 
 const createCourse = (req, res) => {
-    const newCourse = { ...req.body, state: true, enrollments: []}
+    const newCourse = { ...req.body, state: "Disponible", enrollments: []}
 
     const courses = coursesService.getCourses()
 
@@ -43,8 +43,27 @@ const unenrollUser = (req, res) => {
             })
 }
 
+const updateCourse = (req, res) => {
+    const params = req.body
+    const courses = coursesService.getCourses()
+    let curso = courses.find(buscar => buscar.name == params.course)
+    curso.state = params.state
+    courses[params.course] = params.state;
+    const result = coursesService.updateCourseState(courses)
+    result ?
+        res.status(200).send({
+            params: curso,
+            success: true
+        }) :
+        res.status(500).send({
+            message: 'Error inesperado actualizando el estado del curso',
+            success: false
+        })
+}
+
 module.exports = {
     getCourses,
     createCourse,
-    unenrollUser
+    unenrollUser,
+    updateCourse
 }

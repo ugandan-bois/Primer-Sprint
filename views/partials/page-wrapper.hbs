@@ -11,11 +11,11 @@
         <link rel="stylesheet" href="/css/materialize" type="text/css">
         <script type="text/javascript">
           document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(elems, {});
-            var elem = document.querySelector('.collapsible');
-            var instance = new M.Collapsible(elem, {});
-          });
+            const elems = document.querySelectorAll('select')
+            elems && M.FormSelect.init(elems, {})
+            const elem = document.querySelector('.collapsible')
+            elem && new M.Collapsible(elem, {})
+          })
         </script>
     </head>
     <body>

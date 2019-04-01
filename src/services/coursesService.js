@@ -33,10 +33,21 @@ const removeEnrolledUser = (courseId, userId) => {
     return saveCourses()
 }
 
+const updateCourseState = (courses) => {
+  try {
+      fs.writeFileSync('courses.json', JSON.stringify(courses))
+      return true
+  } catch (error) {
+      return false
+  }
+}
+
+
 module.exports = {
     getCourses,
     getCourseById,
     getEnrolledUsersById,
     createCourse,
-    removeEnrolledUser
+    removeEnrolledUser,
+    updateCourseState,
 }
