@@ -5,7 +5,8 @@ class UpdateCourseState {
     }
 
     events() {
-        this.registerButton.addEventListener('click', this.register)
+        this.registerButton && this.registerButton.addEventListener('click', this.register)
+        document.addEventListener('DOMContentLoaded', this.initializeSelect)
     }
 
     register() {
