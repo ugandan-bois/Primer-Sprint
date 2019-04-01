@@ -34,11 +34,57 @@
   </tbody>
 </table>
 
+
+<h4>Actualizar el estado de los cursos</h4>
+<form>
+  <div class="row">
+    <div class="input-field col s6">
+      <select id="course" required>
+        {{#each courses}}
+          <option value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <label for="course">Curso</label>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <select id="state" required>
+          <option value="Disponible">Disponible</option>
+          <option value="Cerrado">Cerrado</option>
+        </select>
+        <label for="state">Estado</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" id="submitCourseActualization">Actualizar
+        <i class="material-icons right">send</i>
+      </button>
+</form>
+
+<h4>Ver cursos como interesado <span class="new badge blue">disponibles</span></h4>
+
+  <ul class="collapsible">
+    {{#each courses}}
+      {{#ifEquals this.state "Disponible"}}
+        <li>
+          <div class="collapsible-header"><i class="material-icons">event_available</i>
+            <p class="waves-effect btn secondary-content">{{this.name}}</p><br>
+            <span class="badge">con precio: ${{this.price}}</span>
+          </div>
+          <div class="collapsible-body">
+            <p> <b>Nombre Curso: </b> <span>{{this.name}}.</span></p><br>
+            <p> <b>Modalidad del curso: </b> <span>{{this.mode}}</span></p><br>
+            <p> <b>Intensidad horararia del curso: </b> <span>{{this.intensity}} horas</span></p><br>
+            <p> <b>Precio: </b> <span>$ {{this.price}}.</span></p><br>
+            <p> <b>Descripción: </b> <span>{{this.description}}.</span></p><br>
+            <p> <b>Estado: </b> <span>{{this.state}}.</span></p><br>
+          </div>
+        </li>
+      {{/ifEquals}}
+    {{/each}}
+</ul>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped')
     var instances = M.Tooltip.init(elems)
   })
 </script>
-
 {{/ page_wrapper }}

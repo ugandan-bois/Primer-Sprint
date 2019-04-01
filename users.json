@@ -1,8 +1,1 @@
-[{
-    "idNumber": "0000",
-    "fullName": "Admin User",
-    "password": "admin123",
-    "email": "admin@ub.com",
-    "phoneNumber": "123456789",
-    "role": "Coordinador"
-}]
+[{"idNumber":"0000","fullName":"Admin User","password":"admin123","email":"admin@ub.com","phoneNumber":"123456789","role":"Coordinador"},{"idNumber":"1037","fullName":"luis","password":"l","email":"l@s.com","phoneNumber":"1","role":"Aspirante"}]
