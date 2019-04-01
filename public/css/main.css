@@ -6,3 +6,7 @@
 .brand-logo img {
     height: 100%;
 }
+
+.course__description {
+    padding: 1em;
+}
