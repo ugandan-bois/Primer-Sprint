@@ -27,7 +27,11 @@ app.get('/courses', authMiddleware, (req, res) => {
     }
   )
 })
-
+app.get('/courses/:id/enrolled', (req, res) => {
+    const course = coursesService.getCourseById(req.params.id)
+    const enrolledUsers = coursesService.getEnrolledUsersById(req.params.id)
+    res.render('enrolled', { course, enrolledUsers, isLoggedIn: req.session.isLoggedIn})
+})
 app.get('/register', (req, res) => {
     res.render('register')
 })
