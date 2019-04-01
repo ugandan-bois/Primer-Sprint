@@ -2,6 +2,7 @@
 <h1>{{course.name}}</h1>
 <h2>Usuarios inscritos</h2>
 
+{{#if enrolledUsers.length}}
 <table>
   <thead>
     <tr>
@@ -26,4 +27,7 @@
     {{/each}}
   </tbody>
 </table>
+{{else}}
+<span>No hay ningún aspirante inscrito en este curso.</span>
+{{/if}}
 {{/ page_wrapper }}

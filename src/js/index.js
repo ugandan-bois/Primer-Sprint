@@ -4,4 +4,4 @@ import Unenrollment from './components/unenrollment'
 
 const registerUser = new RegisterUser()
 const registerCourse = new RegisterCourse()
-const Unenrollment = new Unenrollment()
+const unenrollment = new Unenrollment()

@@ -27,10 +27,7 @@ class Unenrollment {
                     })
                 })
             } else {
-                M.toast({
-                    html: '<i class="material-icons right">check_circle</i> Aspirante eliminado exitosamente',
-                    classes: "green white-text"
-                })
+                location.reload()
             }
         })
     }

@@ -1,5 +1,6 @@
 const fs = require('fs')
 const courses = require('../../courses.json')
+const users = require('../../users.json')
 
 const saveCourses = () => {
     try {
@@ -16,19 +17,13 @@ const createCourse = (course) => {
     return saveCourses()
 }
 const getEnrolledUsersById = (id) => {
-    const enrolledUsers = [{
-            idNumber: 0000,
-            fullName: "Foo",
-            email: "foo@ub.com",
-            phoneNumber: "123456789"
-        },
-        {
-            idNumber: 1037,
-            fullName: "Bar",
-            email: "bar@ub.com",
-            phoneNumber: "123456789"
-        }
-    ]
+    const course = courses.find(course => course.id == id)
+    const enrolledUsers = users.filter(user => course.enrollments.includes(user.idNumber)).map(user => ({
+        idNumber: user.idNumber,
+        fullName: user.fullName,
+        email: user.email,
+        phoneNumber: user.phoneNumber
+    }))
     return enrolledUsers
 }
 const removeEnrolledUser = (courseId, userId) => {
