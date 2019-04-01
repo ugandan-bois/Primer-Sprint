@@ -13,8 +13,19 @@ const createCourse = (course) => {
     }
 }
 
+const updateCourseState = (courses) => {
+  try {
+      fs.writeFileSync('courses.json', JSON.stringify(courses))
+      return true
+  } catch (error) {
+      return false
+  }
+}
+
+
 module.exports = {
     getCourses,
     getCourseById,
-    createCourse
+    createCourse,
+    updateCourseState,
 }
