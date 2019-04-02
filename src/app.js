@@ -12,6 +12,7 @@ const nodeModulesDir = path.join(__dirname, '../node_modules')
 const viewsRoutes = require('./routes/views')
 const usersRoutes = require('./routes/users')
 const coursesRoutes = require('./routes/courses')
+const enrollmentsRoutes = require('./routes/enrollments')
 
 require("./helpers")
 
@@ -29,6 +30,7 @@ app.use(bodyParser.json())
 app.use('/', viewsRoutes)
 app.use('/api', usersRoutes)
 app.use('/api', coursesRoutes)
+app.use('/api', enrollmentsRoutes)
 
 const PORT = process.env.PORT || 3000
 
